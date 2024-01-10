@@ -17,11 +17,7 @@ public class HMSMain {
         int age = 56;
         boolean isSmoking = true;
 
-//        double premium = insurancePlan.compMonthlyPrem(salary, age, isSmoking);
-//        String premiumMessage = String.format("The monthly premium for a salary of $%.2f, age %d, smoking: %b is -> $%.2f",
-//                salary, age, isSmoking, premium);
-//
-//        logger.info(premiumMessage);
+
         try {
 
             double premium = insurancePlan.compMonthlyPrem(salary, age, isSmoking);
