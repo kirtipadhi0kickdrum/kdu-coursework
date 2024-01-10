@@ -1,45 +1,27 @@
-/**
- * Question - 2 - part
- */
-
 package org.example.question1;
 
-class Billing {
+import java.util.logging.Logger;
 
-    public static double[] computePaymentAmount(Patient patient, double amount) {
-        double[] payments = new double[2];
 
-        HealthInsurancePlan patientInsurancePlan = patient.getInsurancePlan();
+public class HMSMain {
+    private static final Logger logger = Logger.getLogger(HMSMain.class.getName());
 
-        // your logic
-        if(patientInsurancePlan == null)
-        {
-            double discount = 20;
-            payments[0] = 0;
-            payments[1] = amount - discount;
-            return payments;
-        }
-        double coverage = patientInsurancePlan.getCoverage();
-        double insuranceAmount = amount * coverage;
-        payments[0] = insuranceAmount;
-        if(patientInsurancePlan instanceof PlatinumPlan platinumPlan)
-        {
-            payments[1] = amount - insuranceAmount - ((PlatinumPlan) patientInsurancePlan).getDiscount();
-        }
-        else if(patientInsurancePlan instanceof GoldPlan goldPlan)
-        {
-            payments[1] = (amount - insuranceAmount - ((GoldPlan) patientInsurancePlan).getDiscount());
-        }
-        else if(patientInsurancePlan instanceof SilverPlan silverPlan)
-        {
-            payments[1] = (amount*(1-coverage) - ((SilverPlan) patientInsurancePlan).getDiscount());
-        } else if (patientInsurancePlan instanceof BronzePlan bronzePlan) {
-            payments[1] = amount*(1-coverage) - ((BronzePlan) patientInsurancePlan).getDiscount();
-        }
+    public static void main(String[] a) {
+        User staff = new User();
+        InsuranceBrand insuranceBrand = new BlueCrossBlueShield();
+        HealthInsurancePlan insurancePlan = new PlatinumPlan();
+        insurancePlan.setOfferedBy(insuranceBrand);
+        staff.setInsurancePlan(insurancePlan);
 
-        return payments;
+        double salary = 5000;
+        int age = 56;
+        boolean isSmoking = true;
+
+        double premium = insurancePlan.compMonthlyPrem(salary, age, isSmoking);
+        String premiumMessage = String.format("The monthly premium for a salary of $%.2f, age %d, smoking: %b is -> $%.2f",
+                salary, age, isSmoking, premium);
+
+        logger.info(premiumMessage);
     }
-
 }
-
 
