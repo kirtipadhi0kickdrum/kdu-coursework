@@ -1,4 +1,4 @@
-package org.example.Question1;
+package org.example.question1;
 
 public class GoldPlan extends HealthInsurancePlan{
     public GoldPlan()

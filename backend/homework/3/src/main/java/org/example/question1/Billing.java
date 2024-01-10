@@ -2,7 +2,7 @@
  * Question - 2 - part
  */
 
-package org.example.Question1;
+package org.example.question1;
 
 public class Billing {
 

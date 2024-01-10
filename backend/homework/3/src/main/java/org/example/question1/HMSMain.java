@@ -1,4 +1,4 @@
-package org.example.Question1;
+package org.example.question1;
 
 import java.util.logging.Logger;
 

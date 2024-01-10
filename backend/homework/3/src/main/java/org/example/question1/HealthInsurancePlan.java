@@ -2,7 +2,7 @@
  * Question - 2 part
  */
 
-package org.example.Question1;
+package org.example.question1;
 
 public abstract class HealthInsurancePlan{
     // Code for 'coverage' field goes here
