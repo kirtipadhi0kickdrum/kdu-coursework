@@ -2,7 +2,7 @@ package org.example.question1;
 
 public class BlueCrossBlueShield implements InsuranceBrand{
     @Override
-    public double computeMonthlyPremium(HealthInsurancePlan insurancePlan, int age, boolean smoking) {
+    public double compMonthlyPrem(HealthInsurancePlan insurancePlan, int age, boolean smoking) {
         double insurance = 0;
         if(insurancePlan instanceof PlatinumPlan)
         {

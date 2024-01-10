@@ -12,7 +12,7 @@ public class HMSMain {
         HealthInsurancePlan insurancePlan = new PlatinumPlan();
         insurancePlan.setOfferedBy(insuranceBrand);
         staff.setInsurancePlan(insurancePlan);
-        double premium = insurancePlan.computeMonthlyPremium(5000, 56, true);
+        double premium = insurancePlan.compMonthlyPrem(5000, 56, true);
         logger.info("The monthly premium is -> " + premium);
     }
 }

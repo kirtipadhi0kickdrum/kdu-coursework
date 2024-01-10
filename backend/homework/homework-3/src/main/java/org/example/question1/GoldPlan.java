@@ -13,7 +13,7 @@ public class GoldPlan extends HealthInsurancePlan{
     }
 
     @Override
-    public double computeMonthlyPremium(double salary, int age, boolean smoking) {
+    public double compMonthlyPrem(double salary, int age, boolean smoking) {
         return (0.07 * salary);
     }
 }
