@@ -22,18 +22,18 @@ class Billing {
         double coverage = patientInsurancePlan.getCoverage();
         double insuranceAmount = amount * coverage;
         payments[0] = insuranceAmount;
-        if(patientInsurancePlan instanceof PlatinumPlan platinumPlan)
+        if(patientInsurancePlan instanceof PlatinumPlan)
         {
             payments[1] = amount - insuranceAmount - ((PlatinumPlan) patientInsurancePlan).getDiscount();
         }
-        else if(patientInsurancePlan instanceof GoldPlan goldPlan)
+        else if(patientInsurancePlan instanceof GoldPlan)
         {
             payments[1] = (amount - insuranceAmount - ((GoldPlan) patientInsurancePlan).getDiscount());
         }
-        else if(patientInsurancePlan instanceof SilverPlan silverPlan)
+        else if(patientInsurancePlan instanceof SilverPlan)
         {
             payments[1] = (amount*(1-coverage) - ((SilverPlan) patientInsurancePlan).getDiscount());
-        } else if (patientInsurancePlan instanceof BronzePlan bronzePlan) {
+        } else if (patientInsurancePlan instanceof BronzePlan) {
             payments[1] = amount*(1-coverage) - ((BronzePlan) patientInsurancePlan).getDiscount();
         }
 
