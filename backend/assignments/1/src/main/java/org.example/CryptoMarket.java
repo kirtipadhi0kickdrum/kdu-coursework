@@ -1,5 +1,4 @@
-
-
+package org.example;
 
 import com.fasterxml.jackson.databind.JsonNode;
 

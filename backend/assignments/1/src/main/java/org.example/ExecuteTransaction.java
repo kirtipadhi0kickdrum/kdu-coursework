@@ -1,4 +1,4 @@
-
+package org.example;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
