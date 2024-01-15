@@ -1,4 +1,4 @@
-package org.example;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
@@ -13,7 +13,7 @@ public class ExecuteTransaction implements Runnable{
 
     public ExecuteTransaction(JsonNode transactionNode, CryptoMarket cryptoMarket, CountDownLatch latch)
     {
-        this.cryptoMarket =cryptoMarket;
+        this.cryptoMarket =cqryptoMarket;
         this.latch = latch;
         this.transactionNode = transactionNode;
     }
