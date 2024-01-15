@@ -64,7 +64,7 @@ public class Coin {
         if (additionalVolume >= 0) {
             this.volume += additionalVolume;
         } else {
-           logger.info("Invalid additional volume. Volume should be non-negative.");
+            logger.info("Invalid additional volume. Volume should be non-negative.");
         }
     }
 }

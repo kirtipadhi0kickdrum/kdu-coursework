@@ -13,7 +13,7 @@ public class ExecuteTransaction implements Runnable{
 
     public ExecuteTransaction(JsonNode transactionNode, CryptoMarket cryptoMarket, CountDownLatch latch)
     {
-        this.cryptoMarket =cqryptoMarket;
+        this.cryptoMarket =cryptoMarket;
         this.latch = latch;
         this.transactionNode = transactionNode;
     }
