@@ -40,7 +40,7 @@ public class MatchFixtureGenerator {
             for (int j : teamIndices) {
                 if (i != j) {
                     List<String> fixture = new ArrayList<>();
-                    fixture.add(dates.get(dateIndex));
+                    fixture.add(dates.get(dateIndex % dates.size()));  // Use modulo to reset to 0 when reaching the end
                     fixture.add(teams.get(i));
                     fixture.add(teams.get(j));
                     fixtures.add(fixture);
