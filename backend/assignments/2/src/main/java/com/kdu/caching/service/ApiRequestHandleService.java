@@ -1,8 +1,8 @@
-package com.caching.service;
-import com.caching.dto.GeocodingDTO;
-import com.caching.dto.ReverseGeocodingDTO;
-import com.caching.wrapper.GeocodingResponse;
-import com.caching.wrapper.ReverseGeocodingResponse;
+package com.kdu.caching.service;
+import com.kdu.caching.dto.GeocodingDTO;
+import com.kdu.caching.dto.ReverseGeocodingDTO;
+import com.kdu.caching.wrapper.GeocodingResponse;
+import com.kdu.caching.wrapper.ReverseGeocodingResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class ApiRequestHandleService {
     @Value("${api.url}")
     private String positionstackApiUrl;
 
+
     private final RestTemplate restTemplate;
 
     private final ObjectMapper objectMapper;
@@ -41,56 +43,61 @@ public class ApiRequestHandleService {
     }
 
 
-    @Cacheable(value = "geocoding", key = "#address", unless = "#result.name.toLowerCase() == 'goa'")
+    @Cacheable(value = "geocoding", key = "#address", unless = "#result != null &&  #result.name.toLowerCase() == 'goa'")
     public GeocodingDTO fetchGeoDataFromApi(String address)
     {
-        logger.debug("Fetching geocoding data from the given Address using API : {}", address);
+        logger.debug("Fetching geocoding data from the given Address using API: {}", address);
         String apiUrl = positionstackApiUrl + "/forward";
         String apiKeyParam = "access_key=" + positionstackApiKey;
         String queryParam = "query=" + address;
-        String completeUrl = apiUrl + "?" + apiKeyParam + "&"  + queryParam;
+        String completeUrl = apiUrl + "?" + apiKeyParam + "&" + queryParam;
 
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity(completeUrl, String.class);
-        String geoCodeResult =  responseEntity.getBody();
+        try {
+            ResponseEntity<String> responseEntity = restTemplate.getForEntity(completeUrl, String.class);
+            String geoCodeResult = responseEntity.getBody();
 
-        try{
-            GeocodingResponse geocodingResponse =  objectMapper.readValue(geoCodeResult, GeocodingResponse.class);
-
+            GeocodingResponse geocodingResponse = objectMapper.readValue(geoCodeResult, GeocodingResponse.class);
             List<GeocodingDTO> geoList = geocodingResponse.getData();
             logger.debug("Geocoding data fetched and stored successfully");
             return geoList.isEmpty() ? null : geoList.get(0);
-        }catch (IOException e)
-        {
-
+        } catch (HttpClientErrorException e) {
+            logger.error("HttpClientErrorException occurred while fetching geocoding data from API: {}", e.getResponseBodyAsString());
+            throw e;
+        } catch (IOException e) {
             logger.error("Error occurred while fetching geocoding data from API", e);
-            return null;
+            throw new RuntimeException("Error fetching geocoding data", e); // throw a runtime exception to indicate failure
         }
+
 
     }
 
 
-    @Cacheable(value = "reverse-geocoding", key = "{#latitude, #longitude}")
+    @Cacheable(value = "reverse-geocoding", key = "{#latitude, #longitude}", unless = "#result != null && #result.name.toLowerCase() == 'goa'")
     public ReverseGeocodingDTO fetchReverseGeoDataFromApi(Double latitude, Double longitude) {
-        logger.debug("Fetching reverse geocoding data from given latitude and longitude from the API : {}, {}", latitude, longitude);
+        logger.debug("Fetching reverse geocoding data from given latitude and longitude from the API: {}, {}", latitude, longitude);
         String apiUrl = positionstackApiUrl + "/reverse";
         String apiKeyParam = "access_key=" + positionstackApiKey;
         String latitudeParam = String.valueOf(latitude);
         String longitudeParam = String.valueOf(longitude);
-        String completeUrl = apiUrl + "?" + apiKeyParam + "&query="  + latitudeParam +","+longitudeParam;
+        String completeUrl = apiUrl + "?" + apiKeyParam + "&query=" + latitudeParam + "," + longitudeParam;
 
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity(completeUrl, String.class);
-        String reverseGeoCodeResult =  responseEntity.getBody();
+        try {
+            ResponseEntity<String> responseEntity = restTemplate.getForEntity(completeUrl, String.class);
+            String reverseGeoCodeResult = responseEntity.getBody();
 
-        try{
             ReverseGeocodingResponse reverseGeocodingResponse = objectMapper.readValue(reverseGeoCodeResult, ReverseGeocodingResponse.class);
             List<ReverseGeocodingDTO> geoList = reverseGeocodingResponse.getData();
             logger.debug("Reverse geocoding data fetched and stored successfully.");
             return geoList.isEmpty() ? null : geoList.get(0);
-        }catch(IOException e)
-        {
-            logger.error("Error occurred while fetching reverse geocoding data from the API", e);
-            return null;
+        } catch (NumberFormatException e) {
+            logger.error("Number format error occurred while fetching reverse geocoding data from the API. Response body: {}",
+                    e.getMessage());
+            throw e;
+        } catch (IOException e) {
+            logger.error("Error occurred while parsing reverse geocoding data from API", e);
+            throw new RuntimeException("Error fetching reverse geocoding data", e);
         }
+
     }
 
     @CacheEvict(value = "geocoding", key = "#address")

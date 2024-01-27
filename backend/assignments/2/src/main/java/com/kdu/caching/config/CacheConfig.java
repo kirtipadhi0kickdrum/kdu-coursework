@@ -1,4 +1,4 @@
-package com.caching.config;
+package com.kdu.caching.config;
 
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 

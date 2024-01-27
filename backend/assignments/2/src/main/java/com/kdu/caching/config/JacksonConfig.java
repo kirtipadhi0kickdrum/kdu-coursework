@@ -1,4 +1,4 @@
-package com.caching.config;
+package com.kdu.caching.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
-package com.caching.controller;
-import com.caching.dto.GeocodingDTO;
-import com.caching.dto.ReverseGeocodingDTO;
-import com.caching.service.ApiRequestHandleService;
+package com.kdu.caching.controller;
+import com.kdu.caching.dto.GeocodingDTO;
+import com.kdu.caching.dto.ReverseGeocodingDTO;
+import com.kdu.caching.service.ApiRequestHandleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

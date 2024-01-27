@@ -1,7 +1,7 @@
-package com.caching.wrapper;
+package com.kdu.caching.wrapper;
 
 
-import com.caching.dto.GeocodingDTO;
+import com.kdu.caching.dto.GeocodingDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;

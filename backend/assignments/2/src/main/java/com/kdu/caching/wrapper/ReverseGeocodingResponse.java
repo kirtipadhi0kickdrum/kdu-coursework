@@ -1,6 +1,6 @@
-package com.caching.wrapper;
+package com.kdu.caching.wrapper;
 
-import com.caching.dto.ReverseGeocodingDTO;
+import com.kdu.caching.dto.ReverseGeocodingDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
