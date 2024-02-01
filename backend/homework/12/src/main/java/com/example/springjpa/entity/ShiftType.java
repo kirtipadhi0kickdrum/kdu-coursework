@@ -3,7 +3,7 @@ package com.example.springjpa.entity;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.service.JavaServiceLoadable;
+
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

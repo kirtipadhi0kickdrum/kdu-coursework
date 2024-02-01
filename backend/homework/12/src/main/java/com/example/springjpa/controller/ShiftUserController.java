@@ -44,6 +44,6 @@ public class ShiftUserController {
 
     @DeleteMapping("/shift-user/delete/{id}")
     public void deleteShiftUser(@PathVariable UUID id) throws NoSuchFieldException {
-            shiftUserService.deleteShiftUser(id);
+        shiftUserService.deleteShiftUser(id);
     }
 }

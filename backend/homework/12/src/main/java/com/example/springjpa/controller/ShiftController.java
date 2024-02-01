@@ -28,9 +28,8 @@ public class ShiftController {
     public ResponseEntity<String> addShift(@RequestBody Shift shift)
     {
         try{
-            boolean result = shiftService.addShift(shift);
-
-                return ResponseEntity.ok("Shift added");
+            shiftService.addShift(shift);
+            return ResponseEntity.ok("Shift added");
 
         }catch(Exception e)
         {
@@ -45,7 +44,7 @@ public class ShiftController {
         try{
             List<Shift> shift = shiftService.getShift(tenantId);
 
-                return ResponseEntity.ok(shift.toString());
+            return ResponseEntity.ok(shift.toString());
 
         }catch (Exception e)
         {

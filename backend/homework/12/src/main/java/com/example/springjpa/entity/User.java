@@ -35,6 +35,10 @@ public class User {
         this.tenant = tenant;
     }
 
+    public User()
+    {}
+
+
     public void setUsername(String username)
     {
         this.username = username;
