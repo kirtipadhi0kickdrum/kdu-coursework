@@ -53,7 +53,7 @@ public class InventoryService {
         return InventoryResponseDTOForPOST.builder()
                 .message("Item added to inventory successfully")
                 .object(savedInventoryEntity.toString())
-                .httpStatus(HttpStatus.valueOf("200 OK"))
+                .httpStatus(HttpStatus.OK)
                 .build();
     }
 }

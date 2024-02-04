@@ -7,7 +7,6 @@ import com.kdu.smarthome.response.InventoryResponseDTOForPOST;
 import com.kdu.smarthome.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,7 +28,6 @@ public class InventoryController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<InventoryResponseDTOForPOST> addItemToInventory(@RequestBody InventoryRequestDTO requestDTO)
     {
         InventoryResponseDTOForPOST response = inventoryService.addItemToInventory(requestDTO);

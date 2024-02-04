@@ -26,37 +26,36 @@ public class SecurityConfig  {
     }
 
 
-    private String adminRole  = "ADMIN";
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(req ->
+                .authorizeRequests(req ->
                         req.requestMatchers("/api/v1/auth/**")
                                 .permitAll()
                                 .requestMatchers("api/v1/user/house**")
-                                .hasRole("USER")
+                                .permitAll()
                                 .requestMatchers("/api/v1/house/**")
-                                .hasRole(adminRole)
+                                .permitAll()
                                 .requestMatchers("/api/v1/user/add-to-house/**")
-                                .hasRole(adminRole)
+                                .permitAll()
                                 .requestMatchers("/api/v1/house/rooms/**")
-                                .hasRole(adminRole)
+                                .permitAll()
                                 .requestMatchers("/api/v1/house/devices/**")
-                                .hasRole(adminRole)
+                                .permitAll()
                                 .requestMatchers("/api/v1/devices/move/**")
-                                .hasRole("USER")
+                                .permitAll()
                                 .requestMatchers("/api/v1/user/houses")
-                                .hasRole("USER")
+                                .permitAll()
                                 .requestMatchers("/api/v1/house/details/**")
-                                .hasRole("USER")
+                                .permitAll()
                                 .requestMatchers("/api/v1/house/update-address/**")
-                                .hasRole("USER")
+                                .permitAll()
                                 .requestMatchers("/api/v1/inventory/**")
-                                .hasRole(adminRole)
+                                .permitAll()
                                 .requestMatchers("/api/v1/house/add-device/**")
-                                .hasRole("USER")
+                                .permitAll()
                                 .requestMatchers("/api/v1/device/register/**")
                                 .permitAll()
                                 .anyRequest()
@@ -71,6 +70,9 @@ public class SecurityConfig  {
 
     }
 }
+
+
+
 
 
 
