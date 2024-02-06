@@ -1,0 +1,80 @@
+.container{
+    background-color: blueviolet;
+    padding: 30px;
+    align-content: center;
+    text-align: center;
+    border: 20px solid;
+    border-radius: 11px;
+    border-color: cadetblue;
+   
+}
+
+#child_container{
+    background-color:burlywood;
+    padding: 60px;
+    border-radius: 20px;
+    box-sizing: content-box;
+    height: auto;
+}
+
+#child_container > #span_content_1{
+    font-size: larger;
+    font-weight:bold;
+    font-family: cursive;  
+}
+
+#nav-container{
+    position: fixed;
+    width: 100%;
+    display:inline-block;
+    background-color:crimson;
+    top: 0%;
+    left: 0%;
+}
+
+#home_button{
+    margin-top: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.home{
+    background-color: brown;
+    width: 20%;
+    height: 50px;
+    border-radius: 20px;
+    color: aliceblue;
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+}
+
+.home:hover{
+    background-color: lightcoral;
+    width: 30%;
+    height: 60px;
+}
+
+#combinators p{
+    margin-top: 70px;
+    color: blue;
+}
+
+#child_combinators > .child_combi{
+    color: aqua;
+    font-weight: 100;
+}
+
+#child_combinators + p{
+    color:chartreuse;
+}
+
+#sibling ~ h5{
+    color: bisque;
+}
+
+#pseudo_ele::first-letter{
+    color: burlywood;
+    font-size: larger;
+    font-weight: 500;
+}
