@@ -1,0 +1,86 @@
+.main-container{
+    #city-name{
+        font-size: 250%;
+        color: black;
+        font-family: sans-serif;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    #info-box{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        #degree-text{
+            margin-top: 0;
+        }
+    }
+    #date-container{
+        margin-top: 1.5px;
+    }
+
+    #weekday-name{
+        font-family: sans-serif;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 20% 50% 15% 15%;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+        p{
+            margin-top: 2;
+            margin-bottom: 0;
+            font-size: 90%;
+        }
+        #degree-show{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            p{
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            margin-bottom: 0;
+            img{
+                align-self: center;
+            }
+        }
+        #pollen-name{
+            margin-top: 0;
+        }
+    }
+}
+
+#left-grid-degree{
+    display: grid;
+    grid-template-columns: 9% 7% 1% 1%;
+    #degree-text{
+        font-size: 300%;
+    }
+}
+
+#right-grid-degree{
+    font-size: larger;
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 0%;
+        color: grey;
+        font-family: sans-serif;
+        font-size: 90%;
+    }
+}
+
+.box-container{
+    border: 1px;
+    padding: 4px;
+    box-shadow:1px 1px 1px 1px lightgrey;
+    border-radius: 3px;
+}
+
+#degree-show{
+    p{
+        padding:6px;
+    }
+    margin-top: -4px;
+}
+
+
+
