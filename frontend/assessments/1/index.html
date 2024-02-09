@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <div id="navbar">
+        <div id="logo">
+            <p>Coffee</p>
+        </div>
+        <div id="navbar-menu">
+            <p id="initial-item">Home</p>
+            <p id="initial-item">About</p>
+            <p id="initial-item">Blog</p>
+            <p id="initial-item">Contact</p>
+            <div class="dropdown-icon" onclick="toggleDropdown()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div id="dropdown-menu">
+                <p>Home</p>
+                <p>About</p>
+                <p>Blog</p>
+                <p>Contact</p>
+            </div>
+        </div>
+    </div>
+    <div id="content-area">
+        <div id="text-area">
+            <div id="heading" style="font-weight: 550;">
+                <p style="margin-bottom: 0px;">Coffee</p>
+                <p style="margin-top: 7px;">Drink 3D</p>
+            </div>
+            <div id="details" style="color: white;">
+                <p style="margin-bottom: 0px;">Let's help discover the best coffee drink</p>
+                <p style="margin-top: 2.2px;">of the week</p>
+            </div>
+            <div id="button">
+                <p>Get Started</p>
+            </div>
+        </div>
+        <div id="image-area">
+            <img src="coffee-cup-asset.png" alt="no image">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
