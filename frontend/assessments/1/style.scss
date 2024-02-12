@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins';
+    background-color: rgba(251, 164, 166);
+    padding-left: 70px;
+    padding-right: 40px;
+}
+
+#navbar {
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    #navbar-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .dropdown-icon {
+            display: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            background-color: rgba(251, 164, 166);
+            z-index: 1;
+
+            p {
+                padding: 10px;
+                margin: 0;
+                color: white;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            #initial-item {
+                display: none;
+            }
+
+            .dropdown-icon {
+                display: block;
+            }
+
+            #dropdown-menu {
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+
+            .bar {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 5px 0;
+            }
+        }
+
+        @media screen and (min-width: 577px) and (max-width: 768px) {
+            /* For screens between 577px and 768px */
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+#content-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    #text-area {
+        display: flex;
+        flex-direction: column;
+
+        #heading {
+            font-size: 400%;
+            color: white;
+        }
+
+        #button {
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            border: 2px;
+            border-radius: 9px;
+            background-color: rgb(187, 62, 95);
+            margin-top: 20px;
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #content-area {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #content-area {
+        flex-direction: column;
+        align-items: center;
+    }
+}
