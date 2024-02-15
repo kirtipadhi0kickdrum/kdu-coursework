@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe KDU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="title">
+        <p>kirti recipe kingdom</p>
+    </div>
+    <div id="input">
+        <input type="text" placeholder="Find a recipe.." id="textInput">
+        <button id="searchBtn" >Search</button>
+    </div>
+    <div id="display">
+        <div id="image">
+
+        </div>
+        <div id="item-name">
+
+        </div>
+        <div id="ingredients">
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        
+    function displayRecipes(specificRecipes) {
+        const displayContainer = document.getElementById('display');
+
+        
+        if (Array.isArray(specificRecipes)) {
+            displayContainer.innerHTML = '';
+
+            specificRecipes.forEach(function (recipe) {
+                console.log(recipe);
+                const imageElement = document.createElement('img');
+                imageElement.src = recipe.image;
+                document.getElementById('image')?.appendChild(imageElement);
+
+                const nameElement = document.createElement('h4');
+                nameElement.textContent = recipe.name;
+                document.getElementById('item-name')?.appendChild(nameElement);
+
+                displayContainer?.appendChild(imageElement);
+                displayContainer?.appendChild(nameElement);
+            });
+        } else {
+            console.error('Specific recipes is not an array or is undefined.');
+        }
+    }
+
+
+
+    function getInputValue() {
+        return (document.getElementById('textInput'))?.value || '';
+    }
+
+    const button = document.getElementById('searchBtn');
+    button.addEventListener('click', () => {
+        const inputValue = getInputValue();
+        searchRecipes(inputValue);
+        console.log(specificRecipes);
+        displayRecipes(specificRecipes);
+    })
+    
+    </script>
+</body>
+</html>
