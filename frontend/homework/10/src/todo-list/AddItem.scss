@@ -1,0 +1,24 @@
+#add-container{
+    margin-left: 20px;
+    #add-item-title{
+        font-weight: 700;
+
+    }
+
+    #input-container{
+        display: flex;
+        flex-direction: row;
+
+        #list-input{
+            border: 1px lightgray solid;
+            border-radius: 1px;
+        }
+        #add-item{
+            background-color: black;
+            color: white;
+            padding: 2px;
+            border-radius: 2px;
+            margin-left: 4px;
+        }
+    }
+}
