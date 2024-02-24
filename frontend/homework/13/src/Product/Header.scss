@@ -1,0 +1,31 @@
+#header-container{
+    background-color: darkblue;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    padding: 10px;
+    #search-input{
+        background-color: white;
+        color: black;
+    }
+    #filter{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        #filter-tag{
+            #category-select{
+                margin-left: 10px;
+                background-color: white;
+                color: black;
+            }
+        }
+        #sort{
+            #sort-select{
+                margin-left: 10px;
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+}
