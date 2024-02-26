@@ -1,0 +1,13 @@
+#list{
+    margin-left: -16px;
+    li{
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 540px;
+        border: 2px lightgrey solid;
+        padding: 4.5px;
+        border-radius: 2px;
+    }
+}
