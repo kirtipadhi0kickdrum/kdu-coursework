@@ -87,23 +87,22 @@ const roomTypeSlice = createSlice({
             state.selectedAddOns = action.payload
         },
         calculateTotalCost: (state) => {
-            if(state.selectedRoom && state.selectedDates.startDate && state.selectedDates.endDate)
-            {
+            if (state.selectedRoom && state.selectedDates.startDate && state.selectedDates.endDate) {
                 const roomCost = parseInt(state.selectedRoom.costPerNight, 10)
                 const numberOfDays = Math.ceil(
-                    (state.selectedDates.endDate.getTime() - state.selectedDates.startDate.getTime()) / (1000*60*60*24)
+                    (state.selectedDates.endDate.getTime() - state.selectedDates.startDate.getTime()) / (1000 * 60 * 60 * 24)
                 )
-
+            
                 const addOnsCost = state.selectedAddOns.reduce(
                     (total, addOn) => total + parseInt(addOn.cost, 10), 0
                 )
-
+            
                 const totalCost = (roomCost + addOnsCost) * numberOfDays
                 state.totalCost = totalCost
-            }
-            else{
+            } else {
                 state.totalCost = 0
             }
+            
 
         }
 

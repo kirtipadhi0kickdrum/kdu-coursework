@@ -35,9 +35,9 @@ export function RoomType() {
     const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target
         dispatch(selectDates({
-            ...selectDates, [name]: new Date(value),
-            startDate: new Date(value),
-            endDate: new Date(value)
+            ...selectedDate, [name]: new Date(value),
+            startDate: name === 'startDate' ? new Date(value) : selectedDate.startDate,
+            endDate: name === 'endDate' ? new Date(value) : selectedDate.endDate
         }))
     }
 
@@ -64,9 +64,24 @@ export function RoomType() {
         dispatch(calculateTotalCost())
     }, [dispatch, selectedAddOn, selectedRoom, selectedDate])
   return (
-    <div style={{backgroundColor: 'white', color: 'black', justifyContent: 'center', display:'flex' , flexDirection: 'column', width: '100%', height:'100%', alignItems: 'center'}}>
-        <h2>Hotel Booking</h2>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{
+        backgroundColor: '#f5f5f5',
+        color: 'black',
+        justifyContent: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100vw', 
+        height: '100vh', 
+        alignItems: 'center',
+        padding: '20px',
+        boxSizing: 'border-box',
+    }}>
+        <h2 style={{ marginBottom: '20px' }}>Hotel Booking</h2>
+        <div  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    marginBottom: '20px',
+                }}>
         {availableRooms.map((room) => (
            
             <div
@@ -76,7 +91,8 @@ export function RoomType() {
                     padding: '10px',
                     marginBottom: '10px',
                     cursor: 'pointer',
-                    backgroundColor: selectedRoomId === room.id ? '#eee' : 'white',
+                    backgroundColor:
+                        selectedRoomId === room.id ? '#eee' : 'white',
                 }}
                 onClick={() => handleRoomChange(room.id)}>
                 {room.name}
@@ -88,10 +104,10 @@ export function RoomType() {
         <label>Start Date:</label>
         <input type="date" name='startDate' value={selectedDate.startDate ? selectedDate.startDate.toISOString().substr(0, 10) : ''} onChange={handleDateChange} />
         <label>End Date:</label>
-        <input type="date" name='endDate' value={selectedDate.endDate?.toISOString().split('T')[0] || ''} onChange={handleDateChange}/>
+        <input type="date" name='endDate' value={selectedDate.endDate ? selectedDate.endDate.toISOString().substr(0, 10) : ''} onChange={handleDateChange} />
 
         {selectedRoom && (
-            <div>
+            <div style={{ marginBottom: '20px' }}>
                 <h2>Add Ons</h2>
                 {selectedRoom.addOns.map((addOn) => (
                     <div key={addOn.name}>
