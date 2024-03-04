@@ -1,0 +1,61 @@
+
+
+$blueColor: #3a7fc8; 
+
+.summarizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paper-container {
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 30px;
+  justify-content: center;  
+  
+}
+
+.stock-container {
+  width: 100%;  
+  max-width: 1200px;  
+  display: flex;
+  flex-direction: column;
+  background-color: $blueColor;
+  border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  color: white;
+ 
+}
+
+.stock-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stock-name {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profit-margin {
+  font-size: 16px;
+}
+
+.buy-sell-dates {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.buy-sell-date {
+  font-size: 14px;
+}
+
+
+
