@@ -1,0 +1,129 @@
+$gridColor: #656262;
+$dividerColor: #c1bbbb;
+
+#StockPageContainer{
+    height: 82vh;
+    #StockContainer{
+        #StockDataContainer{
+            #stock-data{
+                display: grid;
+                grid-template-columns: 1fr 1fr auto auto auto;
+                align-items: center;
+                grid-gap: 8px;
+                #stock-name-container{
+                    display: grid;
+                    grid-template-columns: 1fr auto;
+                    grid-gap: 8px;
+                    align-items: center;
+                    border: 2px solid lightgrey;
+                    border-radius: 5px;
+                    padding: 5px;
+                    #stock-symbol{
+                        border: 1px solid yellow;
+                        background-color: lightyellow;
+                        height: 50px;
+                        border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: darkgoldenrod;
+                    }
+                }
+                #price-details{
+                    display: grid;
+                    grid-template-columns: 1fr 2fr 1fr;
+                    grid-gap: 4px;
+                    align-items: center;
+                    border: 2px solid lightgrey;
+                    border-radius: 5px;
+                    padding: 5px;
+                    #price{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    #price-change{
+                        display: flex;
+                        justify-content: center;
+                        color: rgb(86, 231, 86);
+                        font-weight: 800;
+                    }
+                }
+                #enter-quantity{
+                    input{
+                        height: 51px;
+                        border: 2px solid lightgray;
+                        border-radius: 5px;
+                        padding: 5px;
+                    }
+                    
+                }
+                #buy-button{
+                    border: 2px green solid;
+                    #buy{
+                        height: 60px;
+                        padding: 5px;
+                        background-color: lightgreen;
+                        color: green;
+                        border: none;
+                    }
+                }
+                #sell-button{
+                    border: 2px crimson solid;
+                    #sell{
+                        height: 60px;
+                        padding: 5px;
+                        background-color: rgb(227, 145, 145);
+                        color: rgb(156, 5, 35);
+                        border: none;
+                    }
+                }
+            }
+            
+        }
+        #graph-container {
+            position: relative;
+            border: 1px solid $dividerColor;
+            border-radius: 4px;
+            padding: 2px;
+            margin-top: 4px;
+            height: 550px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            overflow-x: auto;
+            white-space: nowrap;
+
+          
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background:
+                radial-gradient(circle at 0 0, $gridColor 1px, transparent 2px),
+                radial-gradient(circle at 20px 20px, $gridColor 1px, transparent 2px);
+              background-size: 20px 20px;
+              background-position: 0 0, 10px 10px;
+              pointer-events: none;
+            }
+          
+            #graph-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              display: flex;
+              flex-direction: row-reverse; 
+              justify-content: flex-start;
+              align-items: flex-end;
+              color: #000;
+              white-space: nowrap;
+              
+            }
+          }     
+    }
+}
