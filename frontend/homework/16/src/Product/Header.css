@@ -1,0 +1,26 @@
+#header-container {
+  background-color: darkblue;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  padding: 10px;
+}
+#header-container #search-input {
+  background-color: white;
+  color: black;
+}
+#header-container #filter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+#header-container #filter #filter-tag #category-select {
+  margin-left: 10px;
+  background-color: white;
+  color: black;
+}
+#header-container #filter #sort #sort-select {
+  margin-left: 10px;
+  background-color: white;
+  color: black;
+}/*# sourceMappingURL=Header.css.map */
