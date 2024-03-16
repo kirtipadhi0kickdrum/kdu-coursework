@@ -1,0 +1,21 @@
+#add-container {
+  margin-left: 20px;
+}
+#add-container #add-item-title {
+  font-weight: 700;
+}
+#add-container #input-container {
+  display: flex;
+  flex-direction: row;
+}
+#add-container #input-container #list-input {
+  border: 1px lightgray solid;
+  border-radius: 1px;
+}
+#add-container #input-container #add-item {
+  background-color: black;
+  color: white;
+  padding: 2px;
+  border-radius: 2px;
+  margin-left: 4px;
+}/*# sourceMappingURL=AddItem.css.map */

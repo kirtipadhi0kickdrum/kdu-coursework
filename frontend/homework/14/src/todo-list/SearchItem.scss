@@ -1,0 +1,16 @@
+#search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 800px;
+    background-color: green;
+    color: white;
+    align-items: center;
+    #searchInput{
+        width: 300px;
+        height: 20px;
+        border-radius: 5px;
+        border: none;
+    }
+
+}
