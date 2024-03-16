@@ -1,0 +1,401 @@
+@import url("http://fonts.cdnfonts.com/css/helvetica-neue-9");
+#main-container {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
+  background-color: black;
+  color: white;
+  grid-column-gap: 5px;
+  font-family: "Helvetica Neue", sans-serif;
+  height: 80vh;
+}
+#main-container #profile-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 35px;
+  padding: 15px;
+}
+#main-container #profile-container svg {
+  height: 20px;
+  margin-left: 14px;
+}
+#main-container #profile-container #profile-icon {
+  justify-content: center;
+}
+#main-container #profile-container #home {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #explore {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #notifications {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #messages {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #grok {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #lists {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #bookmarks {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #communities {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #premium {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #profile {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #posts {
+  display: none;
+}
+#main-container #profile-container #more {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 25px;
+}
+#main-container #profile-container #post-button {
+  justify-items: center;
+}
+#main-container #profile-container #post-button #button {
+  background-color: rgb(29, 155, 240);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 16px;
+  width: 100%;
+}
+#main-container #profile-container #profile-display {
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  align-items: center;
+  grid-gap: 12px;
+}
+#main-container #profile-container #profile-display #text {
+  display: grid;
+  grid-template-rows: 2;
+}
+#main-container #profile-container #profile-display #following {
+  display: none;
+}
+#main-container #post-container {
+  overflow-y: auto;
+  grid-template-columns: 1fr;
+}
+#main-container #post-container #post-input {
+  width: auto;
+  border: 1px white solid;
+  display: grid;
+  top: 2;
+  grid-column: 1fr 3fr 1fr;
+  grid-row: 1fr 1fr;
+  padding: 10px;
+}
+#main-container #post-container #post-input svg {
+  height: 20px;
+}
+#main-container #post-container #post-input #image {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin-right: 5px;
+}
+#main-container #post-container #post-input #input-box {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+#main-container #post-container #post-input #input-box textarea {
+  min-height: auto;
+  max-height: 70px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  width: 98%;
+}
+#main-container #post-container #post-input #post-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 4fr;
+  grid-gap: 8px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+#main-container #post-container #post-input #post-button {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+#main-container #post-container #post-input #post-button #tweet-btn {
+  background-color: rgb(29, 155, 240);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 16px;
+  width: 100%;
+}
+#main-container #post-container .posts {
+  display: grid;
+  width: auto;
+  border: 1px white solid;
+  display: grid;
+  top: 2;
+  grid-column: 1fr 3fr 1fr;
+  grid-row: 1fr 2fr 1fr;
+  padding: 10px;
+}
+#main-container #post-container .posts #image {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  margin-right: 5px;
+}
+#main-container #post-container .posts #name {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+#main-container #post-container .posts #text {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+#main-container #post-container .posts #icons {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 60px;
+}
+#main-container #post-container .posts #icons svg {
+  width: 20px;
+}
+#main-container #post-container .posts #icons .clickableSvgContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#main-container #post-container .posts #icons .clickableSvgContainer #countText {
+  fill: black;
+  display: none;
+  color: rgb(225, 55, 125);
+}
+#main-container #post-container .posts #save-icon {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+#main-container #post-container .posts #save-icon svg {
+  width: 20px;
+}
+
+#mobileViewBottom {
+  display: none;
+}
+
+@media (max-width: 414px) and (max-height: 896px) {
+  #main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: black;
+    color: white;
+    grid-column-gap: 5px;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+  #main-container #profile-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 30px;
+    padding: 15px;
+  }
+  #main-container #profile-container svg {
+    height: 20px;
+    margin-left: 14px;
+  }
+  #main-container #profile-container #profile-icon {
+    justify-content: center;
+    display: none;
+  }
+  #main-container #profile-container #home {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+    margin-top: 150px;
+  }
+  #main-container #profile-container #explore {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #notifications {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #messages {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #grok {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #lists {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #bookmarks {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #communities {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #premium {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #profile {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #posts {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+    align-items: center;
+  }
+  #main-container #profile-container #more {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+  }
+  #main-container #profile-container #post-button {
+    display: none;
+    justify-items: center;
+  }
+  #main-container #profile-container #post-button #button {
+    background-color: rgb(29, 155, 240);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 16px;
+    width: 100%;
+  }
+  #main-container #profile-container #profile-display {
+    display: grid;
+    position: absolute;
+    bottom: auto;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 12px;
+  }
+  #main-container #profile-container #profile-display #text {
+    display: grid;
+    grid-template-rows: 2;
+  }
+  #main-container #profile-container #profile-display #following {
+    display: grid;
+  }
+  #main-container #profile-container #profile-display #tripple-dots {
+    display: none;
+  }
+  #main-container #post-input {
+    grid-template-columns: 1fr;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #main-container #post-input #image {
+    margin-right: 0; /* Adjust as needed */
+  }
+  #main-container #post-input #input-box {
+    grid-column: 1fr;
+  }
+  #main-container #post-input #input-box textarea {
+    width: 50%;
+  }
+  #main-container #post-input #post-icons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: 1fr;
+  }
+  #main-container #post-input #post-icons svg {
+    height: 16px; /* Adjust as needed */
+  }
+  #main-container #post-input #post-button {
+    grid-column: 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */
