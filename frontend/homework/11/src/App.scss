@@ -1,0 +1,40 @@
+#main-container{
+    
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    margin: auto;
+    #new-quote{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        #new-quote-btn{
+            background-color: #FFE3CA;
+            border: none;
+            padding: 13px;
+            color: #0C359E;
+            font-weight: 750;
+        }
+        #search-quote{
+            background-color: aquamarine;
+            border: none;
+        }
+    }
+    #filter-handle{
+        #tag{
+            background-color: #EE99C2;
+            border: none;
+            border-radius: 5px;
+            padding:8px;
+            margin-right: 5px;
+            font-weight: 600;
+            width:max-content;
+            #del-btn{
+                background-color: blueviolet;
+                border: none;
+                color: white;
+                font-weight: 500;
+            }
+        }
+    }
+}
