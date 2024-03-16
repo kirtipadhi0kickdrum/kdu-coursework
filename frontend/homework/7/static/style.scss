@@ -1,0 +1,75 @@
+
+
+#body{  
+    width: 98%;
+    height: 92vh;
+    border: 5px rgb(92, 92, 165) solid;
+    justify-content: center;
+    border-radius: 10px;
+    
+    #main-container{
+        margin-left: 40px;
+        margin-right: 40px;
+        
+        #heading{
+            font-size: 30px;
+            font-weight: 200;
+            border: 2px solid;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            background-image: url(https://img.freepik.com/free-vector/3d-black-wallpaper-background-design_1017-38011.jpg?size=626&ext=jpg&ga=GA1.1.87170709.1707782400&semt=ais);
+        }
+
+        #input-container{
+            
+            position: absolute;
+            bottom: 10%;
+            display: grid;
+            grid-template-columns: 10fr 1fr;
+            grid-gap: 5px;
+            
+            #userMessage{
+                border-radius: 20px;
+                background-color: blanchedalmond;
+                padding: 10px;
+            }
+            #sendMessage{
+                background-color: rgb(51, 187, 142);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                svg{
+                    height: 30px
+                }
+            }
+            #sendMessage:hover{
+                background-color: aquamarine;
+            }
+        }
+        #message-container{
+            height: 70vh;
+            overflow: scroll;
+            #messages{
+                p{
+                    
+                    border: 2px solid;
+                    padding: 8px;
+                    border-radius: 8px;
+                    border-color: cadetblue;
+                    color: white;
+                    align-items: center;
+                    display: flex;
+                    width: fit-content;
+                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,110,1) 35%, rgba(0,212,255,1) 100%);
+                }
+                img{
+                    height: 20px;
+                    
+                }
+            }
+        }
+        
+        
+    }
+}

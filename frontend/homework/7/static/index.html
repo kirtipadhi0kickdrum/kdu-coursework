@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirti Chats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body" style="background-image: url(https://static.vecteezy.com/system/resources/previews/006/941/002/non_2x/small-hexagon-shape-with-light-white-and-grey-color-seamless-pattern-background-free-vector.jpg);" >
+    <div id="main-container" >
+        <h1 id="heading">KDU CHATS</h1>
+        <div id="input-container">
+            <input type="text" id="userMessage" placeholder="   Send message..">
+            <button id="sendMessage">
+                <svg data-kbt="true" data-qa="send" aria-hidden="true" viewBox="0 0 20 20" class="is-inline"><path fill="currentColor" fill-rule="evenodd" d="M1.856 1.612a.75.75 0 0 1 .73-.033l15.5 7.75a.75.75 0 0 1 0 1.342l-15.5 7.75A.75.75 0 0 1 1.5 17.75v-6.046c0-.68.302-1.29.78-1.704a2.25 2.25 0 0 1-.78-1.704V2.25a.75.75 0 0 1 .356-.638M3 3.464v4.832a.75.75 0 0 0 .727.75l6.546.204a.75.75 0 0 1 0 1.5l-6.546.204a.75.75 0 0 0-.727.75v4.833L16.073 10z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+        
+        <div id="message-container">
+            <div id="messages"></div>   
+        </div>
+        
+    </div>
+    
+
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+    <script>
+        
+        const inputMessage = document.getElementById('userMessage')
+        const sendButton = document.getElementById('sendMessage')
+        const messageSpace = document.getElementById('messages')
+        const senderIcon = document.createElement('img');
+        senderIcon.setAttribute('src', "https://cdn3.iconfinder.com/data/icons/letters-and-numbers-1/32/letter_Y_blue-512.png");
+
+        const userIcon = document.createElement('img');
+        userIcon.setAttribute('src', "https://cdn-icons-png.flaticon.com/512/3600/3600962.png")
+
+        function addMessage(ICON, message)
+        {
+            const element = document.createElement('p')
+            element.appendChild(ICON)
+            element.innerHTML += ` : ${message}`;
+            messageSpace.appendChild(element);   
+        }
+
+        const socket = io('http://localhost:3000')
+
+        sendButton.addEventListener('click', () => {
+            const message = inputMessage.value;
+
+            socket.emit("message", message);
+
+            addMessage(senderIcon, message)
+        })
+
+        socket.on("new-message", message => {
+            addMessage(userIcon, message)
+        })
+    </script>
+</body>
+</html>
