@@ -1,0 +1,22 @@
+#skill-details{
+    display: flex;
+    flex-direction: column;
+    
+    border: 2px solid;
+    
+    background-color: rgb(123, 199, 224);
+    margin-left: 20px;
+    color: green;
+    height: 500px;
+    width: 100%;
+}
+
+#title{
+    color: orange;
+    align-self: center;
+    font-size: 25px;
+}
+
+#list-item{
+    font-size: larger;
+}
