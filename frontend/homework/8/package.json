@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/readline-sync": "^1.4.8",
+    "typescript": "^5.3.3"
+  },
+  "name": "fe_homework_8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jsdom": "^24.0.0",
+    "readline-sync": "^1.4.10"
+  }
+}
