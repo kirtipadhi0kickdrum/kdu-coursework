@@ -1,0 +1,17 @@
+{
+  "name": "node_demo",
+  "version": "1.0.0",
+  "description": "just for demp purpose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kirti",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
