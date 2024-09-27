@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE-ASSIGNMENT-2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="main-container" style="border: 2px solid; padding: 5px;">
+        <div id="title-bar">
+            <p>KDU Stock Market Dashboard</p>
+        </div>
+        <div id="dashboard">
+            <div id="higher-section">
+                <div id="data-display">
+                    <div id="stock-brand">
+                        <div id="stock-icon">
+                            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/af1307136664867.Y3JvcCw1NzUzLDQ1MDAsNDIsMA.jpg" alt="">
+                        </div>
+                        <div id="stock-name">
+                            <p>Zomato</p>
+                        </div>
+                    </div>
+                    <div id="price-details">
+                        <div id="price">
+                            <p>price</p>
+                        </div>
+                        <div id="initial-price-container">
+                            <p id="initial-price">
+                                --
+                            </p>
+                        </div>
+                        <div id="percentage-change">
+                            <p id="change"></p>
+                        </div>
+                    </div>
+                    <div id="quantity-input">
+                        <input type="text" placeholder="Enter QTY">
+                    </div>
+                    <div id="buy-btn">
+                        <button id="buy">BUY</button>
+                    </div>
+                    <div id="sell-btn">
+                        <button id="sell">SELL</button>
+                    </div>
+
+                </div>
+                <div id="graph-container">
+                    
+                </div>
+            </div>
+            <div id="lower-section">
+                <div id="head">
+                    <p>History</p>
+                </div>
+                <div id="buyStock">
+                    <p>100 Stocks</p>
+                    <p>Fri, 16 Feb 2014</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            
+            const socket = io('http://localhost:3000')
+            socket.on('priceUpdate', function (data) {
+                const { timeInterval, priceChange} = data
+
+                const newBarHeight = priceChange;
+                const barColor = priceChange >= 0 ? '#ffc9c9' : '#b2f2bb';
+
+                const newBar = document.createElement('div')
+                newBar.style.height = `${newBarHeight}px`
+                newBar.style.width = '20px'
+                newBar.style.backgroundColor = barColor;
+
+                const barGraphContainer = document.getElementById('graph-container')
+                barGraphContainer.appendChild(newBar)
+
+                if(barGraphContainer.children.length > 30)
+                {
+                    barGraphContainer.innerHTML = '';
+                }
+
+                let initPrice = 100;
+                initPrice += priceChange;
+                console.log(initPrice);
+                const priceShow = document.getElementById('initial-price');
+                priceShow.textContent = initPrice;
+
+                document.getElementById('change').innerText = `${priceChange} %`
+                
+
+            })
+
+            fetch('/')
+                .then(response => response.json())
+                .then(data => {
+                    const { initialPrice} = data;
+                    document.getElementById('initial-price').textContent = initialPrice;
+                })
+                .catch(error => console.error('error fetching initial data > ', error));
+        })
+        
+        
+
+        
+    </script>
+</body>
+</html>

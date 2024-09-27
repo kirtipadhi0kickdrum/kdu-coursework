@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+body {
+  font-family: "Poppins";
+}
+
+#title-bar {
+  border: 2px;
+  border-radius: 1px;
+  background-color: #1871c2;
+  padding: 2px;
+  color: white;
+  font-size: x-large;
+}
+#title-bar p {
+  margin-left: 10px;
+}
+
+#dashboard {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+}
+#dashboard #higher-section {
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+#dashboard #higher-section #data-display {
+  display: grid;
+  grid-template-columns: 4fr 7fr 4fr 1fr 1fr;
+  grid-gap: 5px;
+}
+#dashboard #higher-section #data-display #stock-brand {
+  border: 2px solid;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 4px;
+}
+#dashboard #higher-section #data-display #stock-brand #stock-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 3px;
+}
+#dashboard #higher-section #data-display #stock-brand #stock-icon img {
+  height: 40px;
+  width: 40px;
+}
+#dashboard #higher-section #data-display #price-details {
+  border: 2px solid;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+}
+#dashboard #higher-section #data-display #price-details #initial-price-container #initial-price {
+  color: rgb(133, 185, 55);
+  font-weight: 300;
+}
+#dashboard #higher-section #data-display #quantity-input {
+  border: 2px solid;
+  display: flex;
+  justify-items: center;
+  width: 100%;
+}
+#dashboard #higher-section #data-display #buy-btn {
+  border: 2px #5cb568 solid;
+  display: flex;
+}
+#dashboard #higher-section #data-display #buy-btn #buy {
+  border: none;
+  background-color: #b2f2bb;
+  width: 100%;
+}
+#dashboard #higher-section #data-display #sell-btn {
+  border: 2px #db7c7c solid;
+  display: flex;
+}
+#dashboard #higher-section #data-display #sell-btn #sell {
+  border: none;
+  background-color: #ffc9c9;
+  width: 100%;
+}
+#dashboard #higher-section #graph-container {
+  height: 500px;
+  border: 2px solid;
+  display: grid;
+  grid-template-columns: repeat(31, 20px);
+  transform: scaleY(-1);
+}
+#dashboard #higher-section #graph-container div {
+  max-height: 499px;
+  display: flex;
+}
+#dashboard #lower-section {
+  border: 2px solid;
+  padding: 10px;
+}
+#dashboard #lower-section #buyStock {
+  border: 2px solid;
+  border-radius: 25px;
+  padding: 5px;
+}/*# sourceMappingURL=style.css.map */
